@@ -1,0 +1,107 @@
+$primary-color: #2F80ED;
+$secondary-color: #E0E0E0;
+.steps, .step__point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step__header {
+  text-align: center;
+  margin-top: auto;
+}
+.step {
+  flex: 1;
+  margin-top: auto;
+
+  &:first-child {
+    .pre-line {
+      visibility: hidden;
+    }
+  }
+  &:last-child {
+    .post-line {
+      visibility: hidden;
+    }
+  }
+}
+.point {
+  min-width: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: $secondary-color;
+  border: 1px solid transparent;
+  transition: background 1s ease;
+
+  position: relative;
+  overflow: hidden;
+  &__filler {
+    position: absolute;
+    left: -100%;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    background-color: $primary-color;
+    transition: all .2s ease;
+  }
+}
+.pre-line, .post-line {
+  height: 1px;
+  width: 100%;
+  background: $secondary-color;
+  transition: background 1s ease;
+
+  &__filler {
+    width: 0;
+    height: 1px;
+    background-color: $primary-color;
+  }
+}
+.active {
+  .point {
+    border: 1px solid $primary-color;
+    transition: border .2s ease .6s;
+  }
+  .pre-line {
+    &__filler {
+        width: 100%;
+        transition: all .2s ease .4s;
+    }
+  }
+}
+.done {
+  .point {
+    background-color: $primary-color;
+
+    &__filler {
+        left: 0;
+    }
+  }
+  .pre-line {
+    &__filler {
+        width: 100%;
+        transition: all .2s ease .2s;
+    }
+  }
+  .post-line {
+    &__filler {
+        width: 100%;
+        transition: all .2s ease .2s;
+    }
+  }
+}
+.inactive {
+
+}
+button {
+  height: 34px;
+  padding: 0 25px;
+}
+.form {
+    display: none;
+    margin-bottom: 34px;
+
+    &.active {
+        display: block;
+    }
+}

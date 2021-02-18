@@ -1,0 +1,116 @@
+.steps, .step__point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.step__header {
+  text-align: center;
+  margin-top: auto;
+}
+
+.step {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: auto;
+}
+
+.step:first-child .pre-line {
+  visibility: hidden;
+}
+
+.step:last-child .post-line {
+  visibility: hidden;
+}
+
+.point {
+  min-width: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: #E0E0E0;
+  border: 1px solid transparent;
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.point__filler {
+  position: absolute;
+  left: -100%;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background-color: #2F80ED;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.pre-line, .post-line {
+  height: 1px;
+  width: 100%;
+  background: #E0E0E0;
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
+}
+
+.pre-line__filler, .post-line__filler {
+  width: 0;
+  height: 1px;
+  background-color: #2F80ED;
+}
+
+.active .point {
+  border: 1px solid #2F80ED;
+  -webkit-transition: border .2s ease .6s;
+  transition: border .2s ease .6s;
+}
+
+.active .pre-line__filler {
+  width: 100%;
+  -webkit-transition: all .2s ease .4s;
+  transition: all .2s ease .4s;
+}
+
+.done .point {
+  background-color: #2F80ED;
+}
+
+.done .point__filler {
+  left: 0;
+}
+
+.done .pre-line__filler {
+  width: 100%;
+  -webkit-transition: all .2s ease .2s;
+  transition: all .2s ease .2s;
+}
+
+.done .post-line__filler {
+  width: 100%;
+  -webkit-transition: all .2s ease .2s;
+  transition: all .2s ease .2s;
+}
+
+button {
+  height: 34px;
+  padding: 0 25px;
+}
+
+.form {
+  display: none;
+  margin-bottom: 34px;
+}
+
+.form.active {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
