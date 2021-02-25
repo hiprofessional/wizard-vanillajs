@@ -118,13 +118,13 @@ class MyWizard {
 
     updateStep(step) {
         const stepContainer = this.containerElement.querySelector(`.step[data-step-id="${step.Id}"]`);
-        const className = this.getClassName(step.Status);
-        stepContainer.classList.forEach(el => {
-            if (el !== 'step') {
-                stepContainer.classList.remove(el);
+        const classNameForCurrentStatus = this.getClassName(step.Status);
+        stepContainer.classList.forEach(className => {
+            if (className !== 'step') {
+                stepContainer.classList.remove(className);
             }
         })
-        stepContainer.classList.add(className);
+        stepContainer.classList.add(classNameForCurrentStatus);
     }
 
     getClassName(status) {
