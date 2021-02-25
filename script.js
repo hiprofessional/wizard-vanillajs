@@ -1,4 +1,4 @@
-class MyWizrad {
+class MyWizard {
     constructor(containerElement, steps, options = {}) {
         this.containerElement = containerElement;
         this.steps = steps;
@@ -190,4 +190,4 @@ const steps = [
 ];
 
 let wizardContainer = document.querySelector('.steps__container');
-let wizard = new MyWizrad(wizardContainer, steps, { activeStepId: 1});
+let wizard = new MyWizard(wizardContainer, steps, { activeStepId: 1});
